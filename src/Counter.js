@@ -7,13 +7,13 @@ const Counter = (props) => {
         <div>
             <h1>{props.count}</h1>
             <button
-                onClick={() => props.increment()}
+                onClick={() => props.increment(5)}
             >up</button>
             <button
-                onClick={() => props.decrement()}
+                onClick={() => props.decrement(5)}
             >down</button>
             <button
-                onClick={() => props.reset()}
+                onClick={() => props.reset(0)}
             >reset</button>
         </div >
     )
