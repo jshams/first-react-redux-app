@@ -6,7 +6,8 @@ import { Provider } from 'react-redux'
 
 import reducers from './reducers'
 
-import Counter from './Counter'
+// import Counter from './Counter'
+import CounterList from './CounterList'
 
 const store = createStore(reducers)
 
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        <Counter />
+        <CounterList />
 
       </div>
     </Provider>
