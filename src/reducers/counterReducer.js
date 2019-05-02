@@ -1,17 +1,24 @@
 // responsible for handling increment and decrement situations
-import { INCREMENT, DECREMENT, RESET } from '../actions'
+import { INCREMENT, DECREMENT, RESET, ADD_COUNTER } from '../actions'
 
-const counterReducer = (state = 0, action) => {
+const counterReducer = (state = [0], action) => {
     // two parameters:
     //  state is the current state
     //  action is the action we are calling on the state
+    const newState = [...state]
     switch (action.type) {
         case INCREMENT:
-            return state += action.payload
+            newState[action.payload.index] += action.payload.val
+            return newState
         case DECREMENT:
-            return state -= action.payload
+            newState[action.payload.index] -= action.payload.val
+            return newState
         case RESET:
-            return action.payload
+            newState[action.payload.index] = action.payload.val
+            return newState
+        case ADD_COUNTER:
+            newState.push(action.payload.val)
+            return newState
         default:
             return state
     }
