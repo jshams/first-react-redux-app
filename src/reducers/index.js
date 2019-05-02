@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import counterReducer from './counterReducer'
 
 const reducers = combineReducers({
-    counter: counterReducer,
+    counters: counterReducer,
 })
 
 export default reducers
